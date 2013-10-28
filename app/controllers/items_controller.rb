@@ -11,9 +11,13 @@ class ItemsController < ApplicationController
 	end
 
 	def create
-		Item.create(params[:item])
-		@user_id = current_user.id
-		redirect_to user_path(@user_id)
+		item = Item.create(params[:item])
+		if item.errors.empty?
+			redirect_to user_path(current_user.id)
+		else
+			flash[:errors] = item.errors.full_messages
+			redirect_to new_items_path
+		end
 	end
 
 	def destroy

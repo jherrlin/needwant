@@ -9,7 +9,7 @@ class WishlistsController < ApplicationController
 			#????? should be able to redirect to user
 			#redirect to user
 			redirect_to root_url
-		else 
+		else
 			### change this to page that displays wishlists
 			redirect_to root_url
 		end
