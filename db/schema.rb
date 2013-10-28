@@ -27,6 +27,8 @@ ActiveRecord::Schema.define(:version => 20131020232955) do
     t.datetime "updated_at",  :null => false
   end
 
+  add_index "items", ["wishlist_id", "created_at"], :name => "index_items_on_wishlist_id_and_created_at"
+
   create_table "users", :force => true do |t|
     t.string   "name"
     t.string   "email"

@@ -21,35 +21,6 @@
 	    return null;
 	}
 
-	// function get_default_price() {
- //      if (product_defaults && typeof product_defaults.price == 'function') {
- //        return jq.trim(product_defaults.price())
- //      } 
-
- //      var patt = /[\d,]{1,5}\.\d{2}[^\d"']/g
- //      var price_matches = jq('body').text().match(patt) || []
- //      if (price_matches.length > 0) {
- //        for (var i=0; i<price_matches.length; i++) {
- //          price_matches[i] = price_matches[i].substring(0, price_matches[i].length-1) // remove last char
- //        }
- //      }
- //      if (price_matches.length > 1) {
- //        // not jquery so can't call filter- want to remove all 0's
- //        //price_matches = price_matches.filter(function(v) { return v === '0.00'? false: true;});
- //        var price = price_matches[0]
- //        for (var i=1; i<price_matches.length; i++) {
- //          if (price != price_matches[i]) {
- //            return '';
- //          }
- //        }
- //        return price;
- //      } else if (price_matches.length == 1) {
- //        return price_matches[0];
- //      }
- //      return '';
- //    }
-	
-
 	//frankensteined from friendfeed js, sets location of iframe
 	function needySetIframe(){
 		var iframe;
@@ -73,14 +44,13 @@
 		var rawURL = window.location.href;
 		var rawTitle = document.title;
 
-		var url = 'http://theneedwant.herokuapp.com/item_form/?'
+		var url = 'http://localhost:3000/items/new?'
 		url += '&title=' + encodeURIComponent(rawTitle);
 		url += '&url=' + encodeURIComponent(rawURL);
 		url += '&image=' + image;
-	//	url += '&price=' + default_price;
 		try {
 			iframe.location.replace(url);
-		} 
+		}
 		catch (e) {
 			iframe.location = url; // safari
 		}

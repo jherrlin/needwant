@@ -9,7 +9,7 @@ class WishlistsController < ApplicationController
 			#????? should be able to redirect to user
 			#redirect to user
 			redirect_to root_url
-		else 
+		else
 			### change this to page that displays wishlists
 			redirect_to root_url
 		end
@@ -18,15 +18,8 @@ class WishlistsController < ApplicationController
 	def index
 	end
 
-	def create
-	end
-
 	def destroy
+		#Fill in later
 	end
-
-	def wishlist_params
-		params.require(:wishlist.permit(:user_id))
-	end
-
 
 end

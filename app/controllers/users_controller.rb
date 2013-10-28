@@ -16,16 +16,9 @@ class UsersController < ApplicationController
       @wishlist = Wishlist.create(:user_id => @user.id)
       sign_in(@user)
     	redirect_to @user
-      #redirect_to root_url
     else
       render 'new'
     end
   end
 
-  # private
- 
-  #   def user_params
-  #     params.require(:user).permit(:name, :email, :password,
-  #                                  :password_confirmation)
-  #   end
 end
