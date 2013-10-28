@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
 	end
 
 	def getbookmark
-		# render 'getbookmark.html.erb'
+		render 'getbookmark.html.erb' #Unnecessary, will render by default
 	end
 
 end

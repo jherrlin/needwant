@@ -18,15 +18,8 @@ class WishlistsController < ApplicationController
 	def index
 	end
 
-	def create
-	end
-
 	def destroy
+		#Fill in later
 	end
-
-	def wishlist_params
-		params.require(:wishlist.permit(:user_id))
-	end
-
 
 end
